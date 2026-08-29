@@ -735,6 +735,6 @@ We would like to express our sincere gratitude to our **Project Supervisor** and
 
 **LEXFIND – Legal Document Repository**
 
-> **Current Phase: Review-2 – In Progress**
+> **Current Phase: Review-2 – Completed**
 
 **Developed as part of the DSA-3 Project**
