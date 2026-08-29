@@ -10,14 +10,15 @@ The project focuses on improving document retrieval by applying **String Matchin
 
 ## 👥 Team Members
 
-| Name            | ID Number   | GitHub Username   |
-| --------------- | ----------- | ----------------- |
-| [Team Member 1] | [ID Number] | [GitHub Username] |
-| [Team Member 2] | [ID Number] | [GitHub Username] |
+| Name              | ID Number    | GitHub Username           |
+| ---------------   | -----------  | ------------------------  |
+| [Alluri Akshaya]  | [2520030183] | [alluruakshaya2007-lgtm]  |
+| [Chada Hasika]    | [2520030]    | [chadahasika27-sketch]    |
+| [Yasam Bhaarathi] | [2520030211] | [bhaa1403thi]             |
 
 ### 👨‍🏫 Supervisor
 
-**[Supervisor Name]**
+**[Dr. V.Sireesha]**
 
 ### 📚 Course
 
