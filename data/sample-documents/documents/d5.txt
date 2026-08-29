@@ -1,0 +1,26 @@
+Document ID: D5
+Case Number: CASE-2026-005
+Title: Property Agreement
+Registration Date: 18-04-2026
+Registration Time: 02:15 PM
+Category: Civil
+Year: 2026
+Victim Name: Amit Joshi
+Victim Age: 41
+Victim Phone: 9000000008
+Opponent Name: Rohit Malhotra
+Opponent Phone: 9000000009
+Witness Name: Pooja Nair
+Lawyer Name: Rahul Sharma
+Judge Name: Justice Kavita Rao
+Court Name: District Court
+Location: Pune
+Case Status: Ongoing
+
+Case Details:
+This document contains a property agreement between two
+parties. The property was transferred according to the
+agreement. The court reviewed the property documents
+submitted by the parties. The property agreement was
+accepted after verification of the records and supporting
+documents.

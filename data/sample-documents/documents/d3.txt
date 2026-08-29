@@ -1,0 +1,25 @@
+Document ID: D3
+Case Number: CASE-2026-003
+Title: Criminal Case
+Registration Date: 05-03-2026
+Registration Time: 09:20 AM
+Category: Criminal
+Year: 2026
+Victim Name: Kiran Rao
+Victim Age: 32
+Victim Phone: 9000000004
+Opponent Name: Manoj Kumar
+Opponent Phone: 9000000005
+Witness Name: Deepak Verma
+Lawyer Name: Ananya Singh
+Judge Name: Justice Ravi Kumar
+Court Name: Sessions Court
+Location: Delhi
+Case Status: Under Investigation
+
+Case Details:
+This criminal case involves an investigation conducted by
+the police. The court examined the evidence submitted by
+the prosecution. Witness statements were recorded during
+the investigation. The judge reviewed the case records,
+evidence, and statements before proceeding with the hearing.

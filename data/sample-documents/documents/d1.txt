@@ -1,0 +1,23 @@
+Document ID: D1
+Case Number: CASE-2026-001
+Title: Property Dispute Case
+Registration Date: 12-02-2026
+Registration Time: 10:30 AM
+Category: Civil
+Year: 2026
+Victim Name: Rajesh Kumar
+Victim Age: 45
+Victim Phone: 9876543210
+Opponent Name: Suresh Sharma
+Opponent Phone: 9123456780
+Witness Name: Amit Verma
+Lawyer Name: Priya Singh
+Judge Name: Justice Anil Mehta
+Court Name: District Court
+Location: Bangalore
+Case Status: Ongoing
+
+Case Details:
+This case concerns a property dispute between Rajesh Kumar
+and Suresh Sharma. The court examined the property documents
+and property records submitted by both parties.

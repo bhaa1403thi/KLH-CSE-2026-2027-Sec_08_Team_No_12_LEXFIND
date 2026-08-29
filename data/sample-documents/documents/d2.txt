@@ -1,0 +1,25 @@
+Document ID: D2
+Case Number: CASE-2026-002
+Title: Contract Dispute Case
+Registration Date: 25-02-2026
+Registration Time: 11:45 AM
+Category: Commercial
+Year: 2026
+Victim Name: Arjun Mehta
+Victim Age: 38
+Victim Phone: 9000000002
+Opponent Name: Vikram Shah
+Opponent Phone: 9000000003
+Witness Name: Neha Kapoor
+Lawyer Name: Rohan Patel
+Judge Name: Justice Meera Nair
+Court Name: Commercial Court
+Location: Mumbai
+Case Status: Ongoing
+
+Case Details:
+This case concerns a contract dispute between Arjun Mehta
+and Vikram Shah. The dispute relates to the terms and
+conditions of a business contract. The court examined the
+contract documents and evidence submitted by both parties.
+The contract agreement was reviewed during the hearing.

@@ -1,0 +1,26 @@
+Document ID: D4
+Case Number: CASE-2026-004
+Title: Employment Dispute Case
+Registration Date: 22-03-2026
+Registration Time: 02:10 PM
+Category: Employment
+Year: 2026
+Victim Name: Sneha Iyer
+Victim Age: 29
+Victim Phone: 9000000006
+Opponent Name: Global Tech Solutions
+Opponent Phone: 9000000007
+Witness Name: Rahul Das
+Lawyer Name: Kavya Menon
+Judge Name: Justice Suresh Rao
+Court Name: Labour Court
+Location: Chennai
+Case Status: Hearing Scheduled
+
+Case Details:
+This case concerns an employment dispute between an employee
+and an organization. The employee submitted a complaint
+regarding termination from employment. The court examined
+the employment agreement, company records, and related
+documents. Both parties presented their arguments before
+the court.
