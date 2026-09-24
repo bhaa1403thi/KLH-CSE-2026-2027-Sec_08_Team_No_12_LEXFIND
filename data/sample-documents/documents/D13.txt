@@ -1,0 +1,24 @@
+Document ID: D13
+Case Number: CASE-2026-013
+Title: Divorce Petition Case
+Registration Date: 14-01-2026
+Registration Time: 14:05 AM
+Category: Family
+Year: 2026
+Victim Name: Priya Singh
+Victim Age: 43
+Victim Phone: 9876541013
+Opponent Name: Anil Mehta
+Opponent Phone: 9123451013
+Witness Name: Amit Verma
+Lawyer Name: Priya Singh
+Judge Name: Justice Anil Mehta
+Court Name: District Court
+Location: Hyderabad
+Case Status: Evidence Submitted
+
+Case Details:
+This case concerns a divorce petition involving Priya Singh and Anil Mehta.
+The court examined the documents, records, statements, and evidence
+submitted by both parties. The case is stored for legal document search,
+retrieval, and future text analytics.

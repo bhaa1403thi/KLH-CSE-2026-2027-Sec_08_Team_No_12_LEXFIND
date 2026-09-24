@@ -1,0 +1,24 @@
+Document ID: D11
+Case Number: CASE-2026-011
+Title: Property Dispute Case
+Registration Date: 12-11-2026
+Registration Time: 12:55 AM
+Category: Civil
+Year: 2026
+Victim Name: Suresh Sharma
+Victim Age: 41
+Victim Phone: 9876541011
+Opponent Name: Neha Gupta
+Opponent Phone: 9123451011
+Witness Name: Amit Verma
+Lawyer Name: Priya Singh
+Judge Name: Justice Anil Mehta
+Court Name: District Court
+Location: Hyderabad
+Case Status: Under Review
+
+Case Details:
+This case concerns a property dispute involving Suresh Sharma and Neha Gupta.
+The court examined the documents, records, statements, and evidence
+submitted by both parties. The case is stored for legal document search,
+retrieval, and future text analytics.
