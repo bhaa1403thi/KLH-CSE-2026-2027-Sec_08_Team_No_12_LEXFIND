@@ -1,0 +1,24 @@
+Document ID: D21
+Case Number: CASE-2026-021
+Title: Property Dispute Case
+Registration Date: 22-09-2026
+Registration Time: 14:45 AM
+Category: Civil
+Year: 2026
+Victim Name: Priya Singh
+Victim Age: 51
+Victim Phone: 9876541021
+Opponent Name: Anil Mehta
+Opponent Phone: 9123451021
+Witness Name: Amit Verma
+Lawyer Name: Priya Singh
+Judge Name: Justice Anil Mehta
+Court Name: District Court
+Location: Hyderabad
+Case Status: Under Review
+
+Case Details:
+This case concerns a property dispute involving Priya Singh and Anil Mehta.
+The court examined the documents, records, statements, and evidence
+submitted by both parties. The case is stored for legal document search,
+retrieval, and future text analytics.

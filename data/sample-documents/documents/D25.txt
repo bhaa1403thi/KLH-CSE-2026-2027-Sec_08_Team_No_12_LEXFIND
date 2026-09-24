@@ -1,0 +1,24 @@
+Document ID: D25
+Case Number: CASE-2026-025
+Title: Online Fraud Case
+Registration Date: 26-01-2026
+Registration Time: 10:05 AM
+Category: Cyber Crime
+Year: 2026
+Victim Name: Priya Singh
+Victim Age: 30
+Victim Phone: 9876541025
+Opponent Name: Anil Mehta
+Opponent Phone: 9123451025
+Witness Name: Amit Verma
+Lawyer Name: Priya Singh
+Judge Name: Justice Anil Mehta
+Court Name: District Court
+Location: Hyderabad
+Case Status: Ongoing
+
+Case Details:
+This case concerns a online fraud involving Priya Singh and Anil Mehta.
+The court examined the documents, records, statements, and evidence
+submitted by both parties. The case is stored for legal document search,
+retrieval, and future text analytics.

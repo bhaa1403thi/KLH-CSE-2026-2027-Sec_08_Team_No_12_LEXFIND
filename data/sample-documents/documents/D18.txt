@@ -1,0 +1,24 @@
+Document ID: D18
+Case Number: CASE-2026-018
+Title: Land Ownership Case
+Registration Date: 19-06-2026
+Registration Time: 11:30 AM
+Category: Land
+Year: 2026
+Victim Name: Amit Verma
+Victim Age: 48
+Victim Phone: 9876541018
+Opponent Name: Ravi Reddy
+Opponent Phone: 9123451018
+Witness Name: Amit Verma
+Lawyer Name: Priya Singh
+Judge Name: Justice Anil Mehta
+Court Name: District Court
+Location: Hyderabad
+Case Status: Evidence Submitted
+
+Case Details:
+This case concerns a land ownership involving Amit Verma and Ravi Reddy.
+The court examined the documents, records, statements, and evidence
+submitted by both parties. The case is stored for legal document search,
+retrieval, and future text analytics.

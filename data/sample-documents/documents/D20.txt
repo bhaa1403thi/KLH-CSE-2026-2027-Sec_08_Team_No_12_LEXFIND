@@ -1,0 +1,24 @@
+Document ID: D20
+Case Number: CASE-2026-020
+Title: Assault Case
+Registration Date: 21-08-2026
+Registration Time: 13:40 AM
+Category: Criminal
+Year: 2026
+Victim Name: Rajesh Kumar
+Victim Age: 50
+Victim Phone: 9876541020
+Opponent Name: Suresh Sharma
+Opponent Phone: 9123451020
+Witness Name: Amit Verma
+Lawyer Name: Priya Singh
+Judge Name: Justice Anil Mehta
+Court Name: District Court
+Location: Hyderabad
+Case Status: Ongoing
+
+Case Details:
+This case concerns a assault involving Rajesh Kumar and Suresh Sharma.
+The court examined the documents, records, statements, and evidence
+submitted by both parties. The case is stored for legal document search,
+retrieval, and future text analytics.

@@ -1,0 +1,24 @@
+Document ID: D17
+Case Number: CASE-2026-017
+Title: Consumer Complaint Case
+Registration Date: 18-05-2026
+Registration Time: 10:25 AM
+Category: Consumer
+Year: 2026
+Victim Name: Priya Singh
+Victim Age: 47
+Victim Phone: 9876541017
+Opponent Name: Anil Mehta
+Opponent Phone: 9123451017
+Witness Name: Amit Verma
+Lawyer Name: Priya Singh
+Judge Name: Justice Anil Mehta
+Court Name: District Court
+Location: Hyderabad
+Case Status: Hearing Scheduled
+
+Case Details:
+This case concerns a consumer complaint involving Priya Singh and Anil Mehta.
+The court examined the documents, records, statements, and evidence
+submitted by both parties. The case is stored for legal document search,
+retrieval, and future text analytics.

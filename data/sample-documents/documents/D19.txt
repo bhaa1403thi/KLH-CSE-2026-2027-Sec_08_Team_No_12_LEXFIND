@@ -1,0 +1,24 @@
+Document ID: D19
+Case Number: CASE-2026-019
+Title: Rent Dispute Case
+Registration Date: 20-07-2026
+Registration Time: 12:35 AM
+Category: Civil
+Year: 2026
+Victim Name: Suresh Sharma
+Victim Age: 49
+Victim Phone: 9876541019
+Opponent Name: Neha Gupta
+Opponent Phone: 9123451019
+Witness Name: Amit Verma
+Lawyer Name: Priya Singh
+Judge Name: Justice Anil Mehta
+Court Name: District Court
+Location: Hyderabad
+Case Status: Pending Decision
+
+Case Details:
+This case concerns a rent dispute involving Suresh Sharma and Neha Gupta.
+The court examined the documents, records, statements, and evidence
+submitted by both parties. The case is stored for legal document search,
+retrieval, and future text analytics.
