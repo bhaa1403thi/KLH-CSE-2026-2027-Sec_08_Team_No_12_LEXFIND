@@ -1,0 +1,24 @@
+Document ID: D9
+Case Number: CASE-2026-009
+Title: Rent Dispute Case
+Registration Date: 10-09-2026
+Registration Time: 10:45 AM
+Category: Civil
+Year: 2026
+Victim Name: Priya Singh
+Victim Age: 39
+Victim Phone: 9876541009
+Opponent Name: Anil Mehta
+Opponent Phone: 9123451009
+Witness Name: Amit Verma
+Lawyer Name: Priya Singh
+Judge Name: Justice Anil Mehta
+Court Name: District Court
+Location: Hyderabad
+Case Status: Pending Decision
+
+Case Details:
+This case concerns a rent dispute involving Priya Singh and Anil Mehta.
+The court examined the documents, records, statements, and evidence
+submitted by both parties. The case is stored for legal document search,
+retrieval, and future text analytics.

@@ -1,0 +1,24 @@
+Document ID: D7
+Case Number: CASE-2026-007
+Title: Consumer Complaint Case
+Registration Date: 08-07-2026
+Registration Time: 16:35 AM
+Category: Consumer
+Year: 2026
+Victim Name: Suresh Sharma
+Victim Age: 37
+Victim Phone: 9876541007
+Opponent Name: Neha Gupta
+Opponent Phone: 9123451007
+Witness Name: Amit Verma
+Lawyer Name: Priya Singh
+Judge Name: Justice Anil Mehta
+Court Name: District Court
+Location: Hyderabad
+Case Status: Hearing Scheduled
+
+Case Details:
+This case concerns a consumer complaint involving Suresh Sharma and Neha Gupta.
+The court examined the documents, records, statements, and evidence
+submitted by both parties. The case is stored for legal document search,
+retrieval, and future text analytics.

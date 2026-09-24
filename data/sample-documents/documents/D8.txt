@@ -1,0 +1,24 @@
+Document ID: D8
+Case Number: CASE-2026-008
+Title: Land Ownership Case
+Registration Date: 09-08-2026
+Registration Time: 09:40 AM
+Category: Land
+Year: 2026
+Victim Name: Rajesh Kumar
+Victim Age: 38
+Victim Phone: 9876541008
+Opponent Name: Suresh Sharma
+Opponent Phone: 9123451008
+Witness Name: Amit Verma
+Lawyer Name: Priya Singh
+Judge Name: Justice Anil Mehta
+Court Name: District Court
+Location: Hyderabad
+Case Status: Evidence Submitted
+
+Case Details:
+This case concerns a land ownership involving Rajesh Kumar and Suresh Sharma.
+The court examined the documents, records, statements, and evidence
+submitted by both parties. The case is stored for legal document search,
+retrieval, and future text analytics.
