@@ -1,0 +1,24 @@
+Document ID: D4
+Case Number: CASE-2026-004
+Title: Contract Dispute Case
+Registration Date: 05-04-2026
+Registration Time: 13:20 AM
+Category: Corporate
+Year: 2026
+Victim Name: Rajesh Kumar
+Victim Age: 34
+Victim Phone: 9876541004
+Opponent Name: Suresh Sharma
+Opponent Phone: 9123451004
+Witness Name: Amit Verma
+Lawyer Name: Priya Singh
+Judge Name: Justice Anil Mehta
+Court Name: District Court
+Location: Hyderabad
+Case Status: Pending Decision
+
+Case Details:
+This case concerns a contract dispute involving Rajesh Kumar and Suresh Sharma.
+The court examined the documents, records, statements, and evidence
+submitted by both parties. The case is stored for legal document search,
+retrieval, and future text analytics.

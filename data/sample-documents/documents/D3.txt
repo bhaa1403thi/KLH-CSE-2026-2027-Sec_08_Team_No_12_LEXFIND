@@ -1,0 +1,24 @@
+Document ID: D3
+Case Number: CASE-2026-003
+Title: Divorce Petition Case
+Registration Date: 04-03-2026
+Registration Time: 12:15 AM
+Category: Family
+Year: 2026
+Victim Name: Suresh Sharma
+Victim Age: 33
+Victim Phone: 9876541003
+Opponent Name: Neha Gupta
+Opponent Phone: 9123451003
+Witness Name: Amit Verma
+Lawyer Name: Priya Singh
+Judge Name: Justice Anil Mehta
+Court Name: District Court
+Location: Hyderabad
+Case Status: Evidence Submitted
+
+Case Details:
+This case concerns a divorce petition involving Suresh Sharma and Neha Gupta.
+The court examined the documents, records, statements, and evidence
+submitted by both parties. The case is stored for legal document search,
+retrieval, and future text analytics.
