@@ -1,0 +1,24 @@
+Document ID: D6
+Case Number: CASE-2026-006
+Title: Employment Dispute Case
+Registration Date: 07-06-2026
+Registration Time: 15:30 AM
+Category: Labour
+Year: 2026
+Victim Name: Amit Verma
+Victim Age: 36
+Victim Phone: 9876541006
+Opponent Name: Ravi Reddy
+Opponent Phone: 9123451006
+Witness Name: Amit Verma
+Lawyer Name: Priya Singh
+Judge Name: Justice Anil Mehta
+Court Name: District Court
+Location: Hyderabad
+Case Status: Under Review
+
+Case Details:
+This case concerns a employment dispute involving Amit Verma and Ravi Reddy.
+The court examined the documents, records, statements, and evidence
+submitted by both parties. The case is stored for legal document search,
+retrieval, and future text analytics.
