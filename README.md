@@ -1,740 +1,279 @@
-# LEXFIND – Legal Document Repository
+# ⚖️ LEXFIND – Legal Document Repository
 
-## 📌 Project Overview
+### A Java-Based Legal Document Search and Text Analytics System
 
-**LEXFIND** is a Legal Document Repository designed to store, organize, and retrieve legal-related documents efficiently. The system allows users to upload and manage a collection of documents and search for relevant documents using keywords.
-
-The project focuses on improving document retrieval by applying **String Matching Algorithms** to identify documents containing user-provided keywords. Instead of manually opening multiple files, users can enter a keyword or phrase such as *property dispute*, *witness*, *agreement*, or *case number*, and the system can identify relevant documents.
-
----
-
-## 👥 Team Members
-
-| Name              | ID Number    | GitHub Username           |
-| ---------------   | -----------  | ------------------------  |
-| [Alluri Akshaya]  | [2520030183] | [alluruakshaya2007-lgtm]  |
-| [Chada Hasika]    | [2520030372]    | [chadahasika27-sketch]    |
-| [Yasam Bhaarathi] | [2520030211] | [bhaa1403thi]             |
-
-### 👨‍🏫 Supervisor
-
-**[Dr. V.Sireesha]**
-
-### 📚 Course
-
-**Data Structures and Algorithms – 3 (DSA-3)**
+**Course:** Data Structures and Algorithms – 3 (25CS2103E)  
+**Department:** Computer Science and Engineering  
+**Section:** 8 | **Team Number:** 12  
+**Academic Year:** 2026–2027  
+**Institution:** KLH Bachupally Campus
 
 ---
 
-## 📝 Abstract
-
-Legal organizations and individuals may need to manage large collections of documents such as case records, agreements, evidence documents, property-related documents, and other legal files. Manually searching through these documents can be time-consuming and inefficient.
+## 📌 About the Project
 
-**LEXFIND – Legal Document Repository** provides an organized platform for storing and retrieving documents. Users can upload documents and search for relevant files using keywords or phrases. The system uses **String Matching Algorithms** to search document content and identify matching documents.
+**LEXFIND (Legal Document Repository)** is a Java-based academic project developed to organize, search, retrieve, and compare legal-style documents efficiently. The project demonstrates how data structures, string-processing techniques, dynamic programming, and advanced searching algorithms can be applied to legal information retrieval.
 
-The project combines document management, database storage, web technologies, and data-structure-based string searching to provide faster and more organized document retrieval. The system can be further extended with advanced search, document classification, ranking, and AI-based document analysis.
+The application provides a menu-driven terminal interface through which users can perform different operations on a collection of fictional legal case records. Each record may contain information such as case title, plaintiff, defendant, document type, keywords, and document content.
 
----
+Instead of manually examining every document, users can search for specific terms, find approximate matches, search using multiple keywords, compare documents, view individual records, and examine repository statistics.
 
-# 🎯 Problem Statement
+LEXFIND demonstrates how different algorithms can be integrated into one application to solve different text-searching and document-analysis problems.
 
-Managing a large number of legal documents manually makes it difficult and time-consuming to locate specific information. Conventional file-storage systems mainly organize documents by filenames or folders and may not efficiently identify relevant documents based on their content.
-
-Therefore, there is a need for a document repository that can organize legal documents and efficiently retrieve relevant documents based on user-provided keywords or phrases.
-
----
-
-# 🎯 Objectives
-
-* To develop a centralized repository for storing and managing legal documents.
-* To allow users to upload and organize documents.
-* To provide keyword-based document searching.
-* To implement a **String Matching Algorithm** for searching document content.
-* To reduce the time required to locate relevant documents.
-* To display documents relevant to the searched keyword or phrase.
-* To provide a foundation for future advanced search and document-analysis features.
-
----
-
-# 💡 Key Features
-
-### 📂 Document Management
-
-* Upload documents.
-* Store document information systematically.
-* Organize documents for easy access.
-
-### 🔍 Keyword Search
-
-* Search documents using keywords.
-* Search using phrases related to a case or document.
-* Identify documents containing matching text.
-
-### ⚡ String Matching
-
-* Apply string matching techniques to search document content.
-* Compare the user query with text extracted from documents.
-* Return documents containing matching keywords.
-
-### 🗄️ Database Management
-
-* Store document metadata.
-* Maintain structured records.
-* Retrieve document information efficiently.
-
-### 📊 Search Results
-
-* Display matching documents.
-* Provide relevant document information.
-* Allow users to access the required document.
-
----
-
-# 🏗️ System Architecture
-
-```text
-                    ┌──────────────────────┐
-                    │        User          │
-                    └──────────┬───────────┘
-                               │
-                               ▼
-                    ┌──────────────────────┐
-                    │   React Frontend     │
-                    │  Search / Upload UI  │
-                    └──────────┬───────────┘
-                               │
-                               ▼
-                    ┌──────────────────────┐
-                    │   Node.js + Express  │
-                    │      Backend         │
-                    └──────────┬───────────┘
-                               │
-                 ┌─────────────┴─────────────┐
-                 │                           │
-                 ▼                           ▼
-       ┌──────────────────┐       ┌──────────────────┐
-       │      MySQL       │       │ Document Storage │
-       │     Database     │       │      /data       │
-       └──────────────────┘       └──────────────────┘
-                 │
-                 ▼
-       ┌──────────────────────┐
-       │ String Matching      │
-       │     Algorithm        │
-       └──────────┬───────────┘
-                  │
-                  ▼
-       ┌──────────────────────┐
-       │    Search Results    │
-       └──────────────────────┘
-```
+## 👥 Project Team
 
----
+| S. No. | Team Member Name | Roll Number |
+|---:|---|---|
+| 1 | Alluru Akshaya | 250030189 |
+| 2 | Yasaam Bhaarathi | 250030211 |
+| 3 | Chada Hasika | 250030372 |
 
-# 🔄 System Workflow
+### Faculty Guide
 
-```text
-Start
-  │
-  ▼
-User opens LEXFIND
-  │
-  ▼
-Upload documents
-  │
-  ▼
-Store document + metadata
-  │
-  ▼
-User enters keyword / phrase
-  │
-  ▼
-Extract / access document text
-  │
-  ▼
-Apply String Matching Algorithm
-  │
-  ▼
-Check for matching text
-  │
-  ├── No Match ──► Display "No Relevant Documents"
-  │
-  └── Match
-        │
-        ▼
-  Display Relevant Documents
-        │
-        ▼
-       End
-```
+**Dr. V. Sireesha**  
+Associate Professor  
+Department of Computer Science and Engineering
 
----
+## 🎯 Project Objectives
 
-# 🧮 Algorithm
+- Develop a Java-based legal document repository.
+- Organize legal-style documents and their associated metadata.
+- Implement efficient text-searching and pattern-matching techniques.
+- Support approximate matching using edit distance.
+- Enable multi-keyword search and document similarity analysis.
+- Apply Data Structures and Algorithms concepts to a practical software application.
+- Demonstrate the differences between algorithmic approaches through a common interface.
 
-## String Matching Algorithm
+## ✨ Key Features
 
-The project uses a **String Matching Algorithm** to search for keywords within document text.
+### 1. Keyword Search
+Searches the available document collection using a specified word or phrase and displays matching records according to the implemented matching rules.
 
-### KMP – Knuth-Morris-Pratt
+### 2. Fuzzy Search
+Uses edit distance to identify approximate textual matches. It can help locate terms when a search query contains spelling differences.
 
-The **KMP algorithm** can be used to efficiently find occurrences of a pattern within a text.
+### 3. Multi-Keyword Search
+Allows users to search using several keywords associated with a legal case. The results depend on the matching logic implemented in the application.
 
-For example:
+### 4. Document Similarity Analysis
+Compares legal-style documents to identify shared textual content or similarities according to the implemented comparison method.
 
-```text
-Document:
-"The property dispute was reported in 2025."
+### 5. Document Details
+Allows users to inspect the information associated with a selected legal document.
 
-Search Keyword:
-"property dispute"
+### 6. Document Management
+Supports listing available records and adding new documents where provided by the implementation.
 
-Result:
-✓ Match Found
-```
-
-KMP uses an **LPS (Longest Proper Prefix which is also Suffix)** array to avoid unnecessary comparisons when a mismatch occurs.
-
-### Why KMP?
-
-* Efficient pattern searching.
-* Avoids repeated comparisons.
-* Suitable for keyword searching.
-* Demonstrates the application of DSA in a real-world project.
-
-### Time Complexity
-
-For text length `n` and pattern length `m`:
-
-```text
-Preprocessing: O(m)
-
-Searching:     O(n)
-
-Overall:       O(n + m)
-```
-
-### LPS Array
-
-The LPS array helps the algorithm determine how far the pattern can be shifted after a mismatch.
-
-Example:
-
-```text
-Pattern:
-ABABC
-
-LPS:
-0 0 1 2 0
-```
-
----
-
-# 🛠️ Technologies Used
-
-## Frontend
-
-* React.js
-* HTML
-* CSS
-* JavaScript
-
-## Backend
-
-* Node.js
-* Express.js
-
-## Database
-
-* MySQL
-
-## Algorithm
-
-* KMP String Matching Algorithm
-
-## Development Tools
-
-* Visual Studio Code
-* Git
-* GitHub
-* Ubuntu / WSL
-
----
-
-# 📁 Project Structure
-
-```text
-LEXFIND/
-│
-├── src/
-│   ├── frontend/
-│   │   └── ...
-│   │
-│   ├── backend/
-│   │   └── ...
-│   │
-│   └── algorithms/
-│       └── ...
-│
-├── docs/
-│   ├── literature-survey/
-│   ├── algorithms/
-│   ├── architecture/
-│   └── screenshots/
-│
-├── data/
-│   ├── sample-documents/
-│   └── README.md
-│
-├── results/
-│   ├── screenshots/
-│   ├── search-results/
-│   └── README.md
-│
-├── reports/
-│   ├── review-1/
-│   ├── review-2/
-│   └── final/
-│
-├── README.md
-└── .gitignore
-```
-
----
-
-# 📂 Folder Description
-
-| Folder      | Purpose                                                         |
-| ----------- | --------------------------------------------------------------- |
-| `src/`      | Frontend, backend, and algorithm implementation                 |
-| `docs/`     | Project documentation, algorithms, architecture and screenshots |
-| `data/`     | Sample documents or documented external dataset source          |
-| `results/`  | Testing results, screenshots and search outputs                 |
-| `reports/`  | Review-1, Review-2 and final reports                            |
-| `README.md` | Main project documentation                                      |
-
----
-
-# ⚙️ Installation and Setup
-
-## 1. Clone the Repository
+### 7. Repository Statistics
+Displays information about the document collection, such as the total number of available records where supported.
+
+### 8. Terminal-Based Interface
+Provides a menu-driven interface for accessing the supported search, retrieval, comparison, and document-management operations.
+
+## 🏗️ System Architecture
+
+LEXFIND separates the main responsibilities of the application into logical layers.
+
+1. **Presentation Layer:** Accepts user input, displays the menu, validates selections, and presents results.
+2. **Repository and Document Model:** Represents the legal document records, their metadata, and their searchable content.
+3. **Algorithm Processing Layer:** Performs the requested pattern matching, approximate searching, or document comparison.
+4. **Result Presentation:** Connects the algorithm output with document information and displays the results.
+
+### Architecture Diagram
+
+![LEXFIND High-Level Architecture](assets/lexfind-architecture.png)
+
+## 🔄 Working of LEXFIND
+
+The application follows a menu-driven execution process:
+
+1. Start the application.
+2. Initialize or load the available legal document collection.
+3. Display the main menu.
+4. Allow the user to select an operation.
+5. Accept the required query or document information.
+6. Execute the corresponding search or comparison logic.
+7. Retrieve matching records or calculate the requested result.
+8. Display the output in the terminal.
+9. Return to the menu or exit the application.
+
+### Workflow Diagram
+
+![LEXFIND Application Workflow](assets/lexfind-workflow.png)
+
+## 🧠 Data Structures and Algorithms Used
+
+LEXFIND demonstrates several algorithmic techniques for solving different text-processing problems.
+
+| Algorithm | Purpose |
+|---|---|
+| Knuth–Morris–Pratt (KMP) | Exact pattern matching using a prefix table |
+| Z-Algorithm | Prefix-match computation for pattern searching |
+| Rabin–Karp | Hash-based pattern-search candidate detection |
+| Edit Distance | Approximate string matching |
+| Dynamic Programming | Computing edit distance efficiently |
+| Aho–Corasick | Searching for multiple patterns in text |
+| Suffix Array | Organizing text suffixes for string analysis |
+| Longest Common Prefix (LCP) | Identifying common textual substrings |
+
+### Why Are Multiple Algorithms Used?
+
+Different algorithms solve different computational problems, even when their results appear similar.
+
+- **KMP** uses prefix information to avoid unnecessary character comparisons.
+- **Z-Algorithm** uses prefix-match lengths to support pattern searching.
+- **Rabin–Karp** uses rolling hashes to identify candidate pattern matches.
+- **Edit Distance** measures the minimum character-level edits required to transform one string into another.
+- **Aho–Corasick** supports matching several patterns during text scanning.
+- **Suffix Array and LCP** support the analysis of common text between documents.
+
+Using different approaches demonstrates their internal working, efficiency, and suitability for different search requirements.
+
+## 🛠️ Technologies Used
+
+| Technology | Purpose |
+|---|---|
+| Java | Core application development |
+| Java Development Kit (JDK) | Compilation and execution |
+| Command-Line Interface (CLI) | User interaction |
+| Local text corpus | Legal-style document collection |
+| Visual Studio Code or another Java IDE | Development and debugging |
+
+The core project uses local Java modules and text files. An external web API is not required for the main workflow described in the project report.
+
+## ⚙️ System Requirements
+
+### Software Requirements
+
+- Java Development Kit (JDK)
+- Windows, Linux, or another compatible operating system
+- Visual Studio Code or another Java-compatible IDE
+- Terminal or command-line environment
+- Project source files and required document corpus
+
+### Hardware Requirements
+
+A standard computer capable of running the selected Java runtime and holding the project's source files and document collection in memory is sufficient for the educational prototype.
+
+## 🚀 Installation and Execution
+
+### Step 1: Install Java
+
+Install a compatible JDK and verify the installation:
 
 ```bash
-git clone [YOUR_GITHUB_REPOSITORY_URL]
+java -version
+javac -version
 ```
 
-```bash
-cd LEXFIND
+### Step 2: Open the Project
+
+Open the LEXFIND project directory in Visual Studio Code or a terminal.
+
+Ensure that the source code and required corpus files are available.
+
+### Step 3: Compile the Java Files
+
+For **Windows PowerShell**, run:
+
+```powershell
+javac -encoding UTF-8 -d out (Get-ChildItem -Recurse src -Filter *.java).FullName
 ```
+
+### Step 4: Run the Application
+
+If the main class in your source code is `texthack.app.TextHackApp`, execute:
+
+```powershell
+java -cp out texthack.app.TextHackApp
+```
+
+**Important:** The run command must match the actual package and main class in your project. If your final code uses a different main class, replace the example class name accordingly.
+
+### Step 5: Use the Application
+
+After launching the program:
+
+1. Read the available menu options.
+2. Select the required operation.
+3. Enter the search query, keywords, or document details requested.
+4. Review the output displayed in the terminal.
+5. Continue with another operation or choose the exit option.
+
+## 🧪 Testing and Validation
+
+The following test cases can be used to evaluate the application.
+
+| Test Case | Input | Expected Behaviour |
+|---|---|---|
+| Exact Search | A phrase present in a document | Matching document is returned |
+| Unsuccessful Search | A phrase absent from the corpus | Clear no-match message |
+| Fuzzy Search | A slightly misspelled term | Approximate candidates may be returned |
+| Multi-Keyword Search | Several relevant keywords | Matching documents follow the implemented rules |
+| Document Comparison | Two valid document records | Comparison result is displayed |
+| Document Lookup | Valid document identifier | Correct document details are shown |
+| Invalid Lookup | Unknown identifier | Clear error message |
+| Invalid Input | Empty query or invalid menu selection | Input is handled safely |
+
+These are suggested validation cases. Actual test results should be recorded only after executing them against the final integrated application.
+
+## 📊 Complexity Analysis
+
+The following are general theoretical complexity characteristics of the named algorithms. Actual application performance also depends on preprocessing, corpus size, and implementation details.
+
+| Algorithm | General Time Complexity |
+|---|---|
+| KMP | \(O(n+m)\) |
+| Z-Algorithm | \(O(n+m)\) |
+| Rabin–Karp | Expected \(O(n+m)\); worst case can be \(O(nm)\) |
+| Edit Distance with Dynamic Programming | \(O(nm)\) |
+| Aho–Corasick | \(O(n+z)\) for searching after preprocessing, with implementation-dependent preprocessing costs |
+| Suffix Array | Construction complexity depends on the construction method |
+| LCP | Linear-time computation after suffix-array ordering, using standard methods |
+
+Here, \(n\) represents text length, \(m\) represents pattern length, and \(z\) represents the number of reported matches where applicable.
+
+These are algorithm-level descriptions, not measured performance results for the complete LEXFIND application.
+
+## ⚠️ Challenges and Limitations
+
+- The quality of search results depends on the available document corpus.
+- Inconsistent document formats can complicate metadata extraction.
+- Case sensitivity, punctuation, and text normalization can affect search behaviour.
+- Fuzzy matching measures character-level differences, not legal meaning.
+- Shared textual content does not prove that two documents have equivalent legal significance.
+- A local educational prototype may lack database persistence, authentication, audit logging, and advanced security controls.
+- Performance on a small sample corpus does not establish scalability to a large legal archive.
+
+## 🔮 Future Enhancements
+
+- Integrate a database for persistent document storage.
+- Develop a graphical user interface.
+- Support PDF and DOCX document ingestion.
+- Introduce indexing and improved search-result ranking.
+- Improve fuzzy-search thresholds through systematic testing.
+- Explore semantic search and paraphrase detection.
+- Add document relationship and citation analysis.
+- Introduce user authentication, access permissions, audit logging, and secure backups.
+- Evaluate performance using larger document collections.
+
+## 📚 References
+
+1. D. E. Knuth, J. H. Morris, and V. R. Pratt, “Fast Pattern Matching in Strings,” *SIAM Journal on Computing*, vol. 6, no. 2, pp. 323–350, 1977.
+2. R. S. Boyer and J. S. Moore, “A Fast String Searching Algorithm,” *Communications of the ACM*, vol. 20, no. 10, pp. 762–772, 1977.
+3. M. A. Crochemore and W. Rytter, *Text Algorithms*. Oxford University Press, 1994.
+4. A. V. Aho and M. J. Corasick, “Efficient String Matching: An Aid to Bibliographic Search,” *Communications of the ACM*, vol. 18, no. 6, pp. 333–340, 1975.
+5. R. A. Wagner and M. J. Fischer, “The String-to-String Correction Problem,” *Journal of the ACM*, vol. 21, no. 1, pp. 168–173, 1974.
+6. U. Manber and G. Myers, “Suffix Arrays: A New Method for On-Line String Searches,” *SIAM Journal on Computing*, vol. 22, no. 5, pp. 935–948, 1993.
+7. Oracle, [Java Platform, Standard Edition Documentation](https://docs.oracle.com/en/java/).
+8. T. H. Cormen, C. E. Leiserson, R. L. Rivest, and C. Stein, *Introduction to Algorithms*, 4th ed. MIT Press, 2022.
+
+## 📜 Disclaimer
+
+LEXFIND is an academic project intended for learning and demonstrating Data Structures and Algorithms concepts. The legal-style documents are for educational purposes and should not be treated as verified legal authorities. Search results do not constitute legal advice.
 
 ---
 
-## 2. Install Node.js Dependencies
-
-Navigate to the backend directory:
-
-```bash
-cd src/backend
-```
-
-Install dependencies:
-
-```bash
-npm install
-```
-
-Navigate to the frontend directory:
-
-```bash
-cd ../frontend
-```
-
-Install dependencies:
-
-```bash
-npm install
-```
-
----
-
-# 🗄️ MySQL Database Setup
-
-1. Install MySQL.
-2. Start the MySQL server.
-3. Create the project database.
-
-Example:
-
-```sql
-CREATE DATABASE lexf​​ind;
-```
-
-Create the required tables according to the database schema provided in:
-
-```text
-docs/database/
-```
-
-Update the database configuration in the backend configuration file.
-
-Example:
-
-```text
-DB_HOST=localhost
-DB_USER=root
-DB_PASSWORD=your_password
-DB_NAME=lexfind
-```
-
-> Do not commit real passwords or sensitive credentials to GitHub.
-
----
-
-# ▶️ Running the Project
-
-## Start Backend
-
-```bash
-cd src/backend
-npm start
-```
-
-or, if configured:
-
-```bash
-npm run dev
-```
-
----
-
-## Start Frontend
-
-Open another terminal:
-
-```bash
-cd src/frontend
-npm start
-```
-
-or:
-
-```bash
-npm run dev
-```
-
-The frontend will normally be available at the local URL displayed by the development server.
-
----
-
-# 🔎 Example Search
-
-Suppose the repository contains:
-
-```text
-case1.pdf
-case2.pdf
-property_case.pdf
-witness_statement.pdf
-```
-
-The user searches:
-
-```text
-property
-```
-
-LEXFIND searches the document text and identifies documents containing the keyword.
-
-Example result:
-
-```text
-Search: property
-
-Results:
-✓ property_case.pdf
-✓ case1.pdf
-```
-
----
-
-# 🧪 Testing
-
-Testing includes:
-
-* Document upload testing
-* Keyword search testing
-* String matching testing
-* Database connectivity testing
-* Search result verification
-* Invalid keyword testing
-* Empty search testing
-* Large document testing
-* Performance testing
-
-### Example Test Cases
-
-| Test Case | Input                | Expected Result                       |
-| --------- | -------------------- | ------------------------------------- |
-| TC01      | Valid document       | Document uploaded successfully        |
-| TC02      | Existing keyword     | Matching documents displayed          |
-| TC03      | Non-existing keyword | No relevant documents displayed       |
-| TC04      | Empty search         | Validation message displayed          |
-| TC05      | Multiple documents   | Relevant documents identified         |
-| TC06      | Phrase search        | Documents containing phrase displayed |
-
----
-
-# 📊 Results
-
-The results section will contain:
-
-* Search results
-* Algorithm performance
-* Test case results
-* Screenshots
-* Document retrieval observations
-
-Detailed results will be maintained inside:
-
-```text
-/results/
-```
-
----
-
-# 📚 Documentation
-
-Project documentation is maintained inside:
-
-```text
-/docs/
-```
-
-It includes:
-
-* Literature Survey
-* Problem Statement
-* Objectives
-* System Architecture
-* Flowchart
-* Algorithms
-* Database Design
-* Testing Documentation
-* Screenshots
-
----
-
-# 📈 Current Phase Status
-
-## Review-1
-
-**Status: Completed**
-
-Completed work:
-
-* ✓ Problem identification
-* ✓ Problem statement
-* ✓ Objectives
-* ✓ Abstract
-* ✓ Literature survey
-* ✓ Initial system design
-* ✓ Project presentation
-
----
-
-## Review-2
-
-**Status: In Progress**
-
-Completed:
-
-* ✓ Repository structure
-* ✓ Initial project setup
-* ✓ Database planning
-* ✓ String matching algorithm study
-* ✓ KMP implementation
-* ✓ LPS array implementation
-* ✓ Initial search logic
-
-In Progress:
-
-* ☐ Frontend integration
-* ☐ Backend integration
-* ☐ Database integration
-* ☐ Document upload
-* ☐ Document text searching
-* ☐ Testing
-* ☐ Performance evaluation
-
----
-
-## Final Review
-
-**Status: Planned**
-
-Planned:
-
-* ☐ Complete frontend
-* ☐ Complete backend
-* ☐ Complete database integration
-* ☐ Complete document search
-* ☐ Testing and debugging
-* ☐ Performance analysis
-* ☐ Final documentation
-* ☐ Final presentation
-* ☐ Final demonstration
-
----
-
-# 🌱 Future Scope
-
-LEXFIND can be extended with:
-
-* 🔹 Advanced full-text search
-* 🔹 Search filters based on document type and date
-* 🔹 Multiple keyword searching
-* 🔹 Document ranking based on relevance
-* 🔹 Fuzzy string matching
-* 🔹 AI-based document classification
-* 🔹 Automatic document summarization
-* 🔹 OCR for scanned documents
-* 🔹 Natural-language search
-* 🔹 User authentication and role-based access
-* 🔹 Cloud-based document storage
-* 🔹 Document version management
-* 🔹 Semantic search using embeddings
-
----
-
-# 👥 Team Contribution
-
-Each team member contributes directly through their own GitHub account.
-
-Contributions are tracked using:
-
-* Git commits
-* Git branches
-* Pull requests where applicable
-* GitHub contribution history
-
-### Contribution Requirement
-
-Every team member must make meaningful contributions under their own GitHub account.
-
-Bulk uploading the entire project through a single member's account is avoided so that individual contributions remain verifiable.
-
----
-
-# 📌 Git Commit Guidelines
-
-Commits should be meaningful and made progressively throughout development.
-
-### Example
-
-```text
-Initial project structure
-```
-
-```text
-Implement MySQL database connection
-```
-
-```text
-Implement KMP string matching algorithm
-```
-
-```text
-Add document upload functionality
-```
-
-```text
-Implement keyword search
-```
-
-```text
-Add search result interface
-```
-
-```text
-Fix document search validation
-```
-
----
-
-# 🏷️ Project Tags
-
-Each major project phase is tagged in Git.
-
-```text
-review-1
-review-2
-final
-```
-
-Example:
-
-```bash
-git tag review-1
-git tag review-2
-git tag final
-```
-
-Push tags using:
-
-```bash
-git push origin --tags
-```
-
----
-
-# 📅 Development Progress
-
-| Phase                | Status         |
-| -------------------- | -------------- |
-| Project Selection    | ✅ Completed    |
-| Review-1             | ✅ Completed    |
-| Repository Setup     | ✅ Completed    |
-| Literature Survey    | ✅ Completed    |
-| Algorithm Selection  | ✅ Completed    |
-| KMP Implementation   | 🔄 In Progress |
-| Frontend             | 🔄 In Progress |
-| Backend              | 🔄 In Progress |
-| Database             | 🔄 In Progress |
-| Testing              | ⏳ Pending      |
-| Performance Analysis | ⏳ Pending      |
-| Review-2             | 🔄 In Progress |
-| Final Implementation | ⏳ Pending      |
-| Final Review         | ⏳ Pending      |
-
----
-
-# 🔐 Repository Access
-
-The GitHub repository will remain accessible until completion of the final project evaluation.
-
-Repository access will be provided to:
-
-* Project Supervisor
-* Course Coordinator
-
----
-
-# 📄 License
-
-This project is developed for **academic and educational purposes** as part of the DSA-3 project.
-
----
-
-# ⭐ Acknowledgement
-
-We would like to express our sincere gratitude to our **Project Supervisor** and **Course Coordinator** for their guidance and support throughout the development of this project.
-
----
-
-## 🚀 Project Status
-
-**LEXFIND – Legal Document Repository**
-
-> **Current Phase: Review-2 – Completed**
-
-**Developed as part of the DSA-3 Project**
+<p align="center">
+  <strong>LEXFIND — Making Legal Document Search Smarter Through Algorithms.</strong>
+</p>
