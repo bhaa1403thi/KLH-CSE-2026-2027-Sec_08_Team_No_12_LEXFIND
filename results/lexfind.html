@@ -1,0 +1,1659 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LEXFIND | Legal Document Repository</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f6f9;
+    color: #1e293b;
+}
+
+/* HEADER */
+header {
+    background: #172554;
+    color: white;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    font-size: 26px;
+}
+
+header p {
+    color: #cbd5e1;
+    font-size: 13px;
+    margin-top: 5px;
+}
+
+.badge {
+    background: #2563eb;
+    padding: 8px 14px;
+    border-radius: 20px;
+    font-size: 12px;
+}
+
+/* LAYOUT */
+.container {
+    display: flex;
+    min-height: calc(100vh - 85px);
+}
+
+.sidebar {
+    width: 230px;
+    background: #ffffff;
+    border-right: 1px solid #e2e8f0;
+    padding: 25px 15px;
+}
+
+.sidebar h3 {
+    font-size: 12px;
+    color: #94a3b8;
+    margin: 10px 12px;
+    text-transform: uppercase;
+}
+
+.sidebar button {
+    width: 100%;
+    text-align: left;
+    padding: 13px;
+    margin: 4px 0;
+    border: none;
+    background: transparent;
+    color: #475569;
+    border-radius: 7px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.sidebar button:hover,
+.sidebar button.active {
+    background: #dbeafe;
+    color: #1d4ed8;
+    font-weight: bold;
+}
+
+.main {
+    flex: 1;
+    padding: 30px;
+    overflow-x: auto;
+}
+
+.page {
+    display: none;
+}
+
+.page.active {
+    display: block;
+}
+
+/* TITLES */
+.page-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.page-title h2 {
+    font-size: 25px;
+    color: #0f172a;
+}
+
+.page-title p {
+    color: #64748b;
+    font-size: 13px;
+    margin-top: 6px;
+}
+
+/* BUTTONS */
+.btn {
+    padding: 11px 18px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.btn-primary {
+    background: #2563eb;
+    color: white;
+}
+
+.btn-primary:hover {
+    background: #1d4ed8;
+}
+
+.btn-secondary {
+    background: #e2e8f0;
+    color: #334155;
+}
+
+.btn-danger {
+    background: #fee2e2;
+    color: #b91c1c;
+}
+
+/* CARDS */
+.stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+    margin-bottom: 25px;
+}
+
+.stat-card {
+    background: white;
+    padding: 22px;
+    border-radius: 10px;
+    border: 1px solid #e2e8f0;
+}
+
+.stat-card p {
+    font-size: 12px;
+    color: #64748b;
+    margin-bottom: 12px;
+}
+
+.stat-card h3 {
+    font-size: 29px;
+    color: #172554;
+}
+
+/* TABLE */
+.card {
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 22px;
+    margin-bottom: 22px;
+}
+
+.card h3 {
+    margin-bottom: 18px;
+    font-size: 17px;
+}
+
+.table-wrapper {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+}
+
+th {
+    background: #f8fafc;
+    color: #64748b;
+    text-align: left;
+    padding: 13px;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+td {
+    padding: 14px 13px;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+tr:hover {
+    background: #f8fafc;
+}
+
+.case-id {
+    color: #2563eb;
+    font-weight: bold;
+}
+
+.tag {
+    background: #dbeafe;
+    color: #1d4ed8;
+    padding: 5px 9px;
+    border-radius: 5px;
+    font-size: 11px;
+}
+
+.action-btn {
+    border: none;
+    background: #eff6ff;
+    color: #2563eb;
+    padding: 7px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 11px;
+}
+
+/* SEARCH */
+.search-area {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 18px;
+    flex-wrap: wrap;
+}
+
+.search-area input,
+.search-area select {
+    padding: 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    font-size: 13px;
+}
+
+.search-area input {
+    flex: 1;
+    min-width: 180px;
+}
+
+/* FORM */
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.form-group.full {
+    grid-column: 1 / -1;
+}
+
+.form-group label {
+    font-size: 13px;
+    font-weight: bold;
+    color: #475569;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    padding: 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    font-size: 13px;
+    font-family: Arial, sans-serif;
+}
+
+.form-group textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.form-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+/* DOCUMENT DETAILS */
+.detail-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.detail-item {
+    padding: 14px;
+    background: #f8fafc;
+    border-radius: 6px;
+}
+
+.detail-item small {
+    display: block;
+    color: #64748b;
+    font-size: 11px;
+    margin-bottom: 5px;
+}
+
+.detail-item strong {
+    font-size: 14px;
+}
+
+.document-content {
+    background: #f8fafc;
+    padding: 20px;
+    border-radius: 7px;
+    line-height: 1.7;
+    font-size: 14px;
+    white-space: pre-wrap;
+}
+
+/* EMPTY */
+.empty {
+    text-align: center;
+    color: #64748b;
+    padding: 30px;
+}
+
+/* TOAST */
+.toast {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    background: #166534;
+    color: white;
+    padding: 14px 20px;
+    border-radius: 7px;
+    display: none;
+    font-size: 13px;
+    z-index: 10;
+}
+
+/* RESPONSIVE */
+@media(max-width: 900px) {
+    .stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .sidebar {
+        width: 190px;
+    }
+}
+
+@media(max-width: 600px) {
+    header {
+        padding: 18px;
+    }
+
+    .container {
+        display: block;
+    }
+
+    .sidebar {
+        width: 100%;
+        display: flex;
+        overflow-x: auto;
+        padding: 10px;
+    }
+
+    .sidebar h3 {
+        display: none;
+    }
+
+    .sidebar button {
+        white-space: nowrap;
+        width: auto;
+    }
+
+    .main {
+        padding: 18px;
+    }
+
+    .stats {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .form-grid,
+    .detail-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .page-title {
+        gap: 12px;
+        align-items: flex-start;
+        flex-wrap: wrap;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div>
+        <h1>⚖ LEXFIND</h1>
+        <p>Legal Document Repository & Intelligent Search System</p>
+    </div>
+    <span class="badge">DSA-3 PROJECT</span>
+</header>
+
+<div class="container">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+        <div>
+            <h3>Workspace</h3>
+
+            <button class="active" onclick="showPage('dashboard', this)">
+                📊 Dashboard
+            </button>
+
+            <button onclick="showPage('documents', this)">
+                📁 All Documents
+            </button>
+
+            <button onclick="showPage('search', this)">
+                🔍 Search Documents
+            </button>
+
+            <button onclick="showPage('add', this)">
+                ➕ Add Document
+            </button>
+        </div>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="main">
+
+        <!-- DASHBOARD -->
+        <section id="dashboard" class="page active">
+
+            <div class="page-title">
+                <div>
+                    <h2>Dashboard</h2>
+                    <p>Overview of your legal document repository</p>
+                </div>
+
+                <button class="btn btn-primary"
+                        onclick="showPage('add')">
+                    + Add Case
+                </button>
+            </div>
+
+            <div class="stats">
+
+                <div class="stat-card">
+                    <p>TOTAL DOCUMENTS</p>
+                    <h3 id="totalDocs">0</h3>
+                </div>
+
+                <div class="stat-card">
+                    <p>CIVIL CASES</p>
+                    <h3 id="civilDocs">0</h3>
+                </div>
+
+                <div class="stat-card">
+                    <p>CRIMINAL CASES</p>
+                    <h3 id="criminalDocs">0</h3>
+                </div>
+
+                <div class="stat-card">
+                    <p>DOCUMENT TYPES</p>
+                    <h3 id="typeDocs">0</h3>
+                </div>
+
+            </div>
+
+            <div class="card">
+                <h3>Recently Added Documents</h3>
+
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Document ID</th>
+                                <th>Case Number</th>
+                                <th>Title</th>
+                                <th>Category</th>
+                                <th>Year</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="recentTable"></tbody>
+                    </table>
+                </div>
+            </div>
+
+        </section>
+
+
+        <!-- ALL DOCUMENTS -->
+        <section id="documents" class="page">
+
+            <div class="page-title">
+                <div>
+                    <h2>All Legal Documents</h2>
+                    <p>Manage and explore registered cases</p>
+                </div>
+
+                <button class="btn btn-primary"
+                        onclick="showPage('add')">
+                    + Add Document
+                </button>
+            </div>
+
+            <div class="card">
+
+                <div class="search-area">
+
+                    <input type="text"
+                           id="documentSearch"
+                           placeholder="Search by title, case number, plaintiff..."
+                           oninput="renderDocuments()">
+
+                    <select id="categoryFilter"
+                            onchange="renderDocuments()">
+
+                        <option value="">All Categories</option>
+                        <option value="Civil">Civil</option>
+                        <option value="Criminal">Criminal</option>
+                        <option value="Corporate">Corporate</option>
+                        <option value="Family">Family</option>
+                        <option value="Property">Property</option>
+
+                    </select>
+
+                </div>
+
+                <div class="table-wrapper">
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Case Number</th>
+                                <th>Title</th>
+                                <th>Category</th>
+                                <th>Registration Date</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="documentsTable"></tbody>
+                    </table>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- SEARCH PAGE -->
+        <section id="search" class="page">
+
+            <div class="page-title">
+                <div>
+                    <h2>Intelligent Search</h2>
+                    <p>Search legal documents using multiple techniques</p>
+                </div>
+            </div>
+
+            <div class="card">
+
+                <h3>Search Legal Documents</h3>
+
+                <div class="search-area">
+
+                    <input type="text"
+                           id="advancedSearch"
+                           placeholder="Enter title, keyword, plaintiff, or content...">
+
+                    <select id="searchType">
+
+                        <option value="normal">
+                            Exact / Keyword Search
+                        </option>
+
+                        <option value="fuzzy">
+                            Fuzzy Search
+                        </option>
+
+                        <option value="multi">
+                            Multi-Keyword Search
+                        </option>
+
+                    </select>
+
+                    <button class="btn btn-primary"
+                            onclick="performSearch()">
+                        Search
+                    </button>
+
+                </div>
+
+                <p id="searchInfo"
+                   style="font-size:12px;color:#64748b;margin-bottom:15px;">
+                </p>
+
+                <div class="table-wrapper">
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Case Number</th>
+                                <th>Title</th>
+                                <th>Category</th>
+                                <th>Match</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="searchResults"></tbody>
+                    </table>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ADD DOCUMENT -->
+        <section id="add" class="page">
+
+            <div class="page-title">
+                <div>
+                    <h2>Add Legal Document</h2>
+                    <p>Register a new case in the repository</p>
+                </div>
+            </div>
+
+            <div class="card">
+
+                <form id="caseForm">
+
+                    <div class="form-grid">
+
+                        <div class="form-group">
+                            <label>Case Number *</label>
+                            <input type="text"
+                                   id="caseNumber"
+                                   placeholder="CASE-2026-003"
+                                   required>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Document Title *</label>
+                            <input type="text"
+                                   id="caseTitle"
+                                   placeholder="Property Dispute Case"
+                                   required>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Registration Date *</label>
+                            <input type="date"
+                                   id="regDate"
+                                   required>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Registration Time</label>
+                            <input type="time"
+                                   id="regTime"
+                                   value="10:30">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Category *</label>
+
+                            <select id="category" required>
+
+                                <option value="">Select Category</option>
+                                <option value="Civil">Civil</option>
+                                <option value="Criminal">Criminal</option>
+                                <option value="Corporate">Corporate</option>
+                                <option value="Family">Family</option>
+                                <option value="Property">Property</option>
+
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Document Type *</label>
+
+                            <select id="docType" required>
+
+                                <option value="">Select Type</option>
+                                <option value="Petition">Petition</option>
+                                <option value="Judgment">Judgment</option>
+                                <option value="Affidavit">Affidavit</option>
+                                <option value="Contract">Contract</option>
+                                <option value="Complaint">Complaint</option>
+                                <option value="Order">Court Order</option>
+
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Plaintiff / Complainant *</label>
+                            <input type="text"
+                                   id="plaintiff"
+                                   placeholder="Rajesh Kumar"
+                                   required>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Defendant / Respondent *</label>
+                            <input type="text"
+                                   id="defendant"
+                                   placeholder="Suresh Sharma"
+                                   required>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Year *</label>
+                            <input type="number"
+                                   id="caseYear"
+                                   value="2026"
+                                   min="1900"
+                                   max="2100"
+                                   required>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Keywords *</label>
+                            <input type="text"
+                                   id="keywords"
+                                   placeholder="property, ownership, dispute"
+                                   required>
+                        </div>
+
+                        <div class="form-group full">
+                            <label>Document Content *</label>
+
+                            <textarea id="content"
+                                      placeholder="Enter the legal document content..."
+                                      required></textarea>
+                        </div>
+
+                    </div>
+
+                    <div class="form-actions">
+
+                        <button type="submit"
+                                class="btn btn-primary">
+                            Save Document
+                        </button>
+
+                        <button type="button"
+                                class="btn btn-secondary"
+                                onclick="document.getElementById('caseForm').reset()">
+                            Clear Form
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </div>
+
+        </section>
+
+
+        <!-- DOCUMENT DETAILS -->
+        <section id="details" class="page">
+
+            <div class="page-title">
+                <div>
+                    <h2>Document Details</h2>
+                    <p>View complete legal document information</p>
+                </div>
+
+                <button class="btn btn-secondary"
+                        onclick="showPage('documents')">
+                    ← Back
+                </button>
+            </div>
+
+            <div id="detailsContent"></div>
+
+        </section>
+
+    </main>
+</div>
+
+<div class="toast" id="toast"></div>
+
+
+<script>
+
+// ============================================
+// LEXFIND LEGAL DOCUMENT REPOSITORY
+// JAVASCRIPT
+// ============================================
+
+// SAMPLE DATA
+const defaultDocuments = [
+
+    {
+        id: "D1",
+        caseNumber: "CASE-2026-001",
+        title: "Property Ownership Dispute",
+        registrationDate: "2026-02-12",
+        registrationTime: "10:30",
+        category: "Civil",
+        year: 2026,
+        plaintiff: "Rajesh Kumar",
+        defendant: "Suresh Sharma",
+        documentType: "Petition",
+        keywords: ["property", "ownership", "dispute"],
+        content: "The plaintiff claims ownership of a residential property based on registered documents. The defendant disputes the ownership and claims an independent right over the property. The matter is submitted for legal consideration."
+    },
+
+    {
+        id: "D2",
+        caseNumber: "CASE-2026-002",
+        title: "Commercial Contract Dispute",
+        registrationDate: "2026-03-08",
+        registrationTime: "11:00",
+        category: "Corporate",
+        year: 2026,
+        plaintiff: "Apex Technologies Pvt Ltd",
+        defendant: "Global Solutions Ltd",
+        documentType: "Contract",
+        keywords: ["contract", "business", "payment"],
+        content: "The plaintiff alleges that the defendant failed to comply with payment terms under a commercial agreement. The parties have submitted contractual documents for review."
+    },
+
+    {
+        id: "D3",
+        caseNumber: "CASE-2026-003",
+        title: "Family Inheritance Petition",
+        registrationDate: "2026-04-15",
+        registrationTime: "09:45",
+        category: "Family",
+        year: 2026,
+        plaintiff: "Anita Rao",
+        defendant: "Vikram Rao",
+        documentType: "Petition",
+        keywords: ["inheritance", "family", "property"],
+        content: "The petitioner requests legal consideration of a family inheritance dispute involving the distribution of inherited assets among family members."
+    },
+
+    {
+        id: "D4",
+        caseNumber: "CASE-2026-004",
+        title: "Theft Complaint",
+        registrationDate: "2026-05-20",
+        registrationTime: "14:15",
+        category: "Criminal",
+        year: 2026,
+        plaintiff: "Meena Devi",
+        defendant: "Unknown Person",
+        documentType: "Complaint",
+        keywords: ["theft", "complaint", "investigation"],
+        content: "The complainant reports the alleged theft of personal property. The complaint contains the reported incident details and requests an investigation."
+    },
+
+    {
+        id: "D5",
+        caseNumber: "CASE-2026-005",
+        title: "Employment Agreement Review",
+        registrationDate: "2026-06-10",
+        registrationTime: "12:00",
+        category: "Corporate",
+        year: 2026,
+        plaintiff: "Neha Enterprises",
+        defendant: "Arjun Mehta",
+        documentType: "Contract",
+        keywords: ["employment", "agreement", "salary"],
+        content: "The document concerns an employment agreement and the obligations of the parties under the stated contractual terms."
+    }
+
+];
+
+let documents = loadDocuments();
+
+let currentSearchResults = [];
+
+
+// ============================================
+// STORAGE
+// ============================================
+
+function loadDocuments() {
+
+    const saved = localStorage.getItem("lexfindDocuments");
+
+    if (saved) {
+
+        try {
+            return JSON.parse(saved);
+        } catch (error) {
+            console.warn("Could not load saved documents.");
+        }
+
+    }
+
+    return defaultDocuments.map(doc => ({...doc}));
+
+}
+
+function saveDocuments() {
+
+    localStorage.setItem(
+        "lexfindDocuments",
+        JSON.stringify(documents)
+    );
+
+}
+
+
+// ============================================
+// NAVIGATION
+// ============================================
+
+function showPage(pageId, button) {
+
+    document.querySelectorAll(".page").forEach(page => {
+
+        page.classList.remove("active");
+
+    });
+
+    const target = document.getElementById(pageId);
+
+    if (target) {
+        target.classList.add("active");
+    }
+
+    document.querySelectorAll(".sidebar button").forEach(btn => {
+
+        btn.classList.remove("active");
+
+    });
+
+    if (button) {
+
+        button.classList.add("active");
+
+    } else {
+
+        const buttons = document.querySelectorAll(".sidebar button");
+
+        buttons.forEach(btn => {
+
+            if (btn.getAttribute("onclick") &&
+                btn.getAttribute("onclick").includes("'" + pageId + "'")) {
+
+                btn.classList.add("active");
+
+            }
+
+        });
+
+    }
+
+    if (pageId === "dashboard") {
+        updateDashboard();
+    }
+
+    if (pageId === "documents") {
+        renderDocuments();
+    }
+
+}
+
+
+// ============================================
+// DASHBOARD
+// ============================================
+
+function updateDashboard() {
+
+    document.getElementById("totalDocs").textContent =
+        documents.length;
+
+    document.getElementById("civilDocs").textContent =
+        documents.filter(d => d.category === "Civil").length;
+
+    document.getElementById("criminalDocs").textContent =
+        documents.filter(d => d.category === "Criminal").length;
+
+    document.getElementById("typeDocs").textContent =
+        new Set(documents.map(d => d.documentType)).size;
+
+    const recent = documents.slice(-5).reverse();
+
+    const table = document.getElementById("recentTable");
+
+    if (recent.length === 0) {
+
+        table.innerHTML =
+            `<tr><td colspan="6" class="empty">No documents available.</td></tr>`;
+
+        return;
+
+    }
+
+    table.innerHTML = recent.map(d => `
+
+        <tr>
+
+            <td class="case-id">${escapeHTML(d.id)}</td>
+
+            <td>${escapeHTML(d.caseNumber)}</td>
+
+            <td>${escapeHTML(d.title)}</td>
+
+            <td><span class="tag">${escapeHTML(d.category)}</span></td>
+
+            <td>${escapeHTML(String(d.year))}</td>
+
+            <td>
+                <button class="action-btn"
+                        onclick="viewDocument('${d.id}')">
+                    View
+                </button>
+            </td>
+
+        </tr>
+
+    `).join("");
+
+}
+
+
+// ============================================
+// ALL DOCUMENTS
+// ============================================
+
+function renderDocuments() {
+
+    const search =
+        document.getElementById("documentSearch").value
+        .toLowerCase()
+        .trim();
+
+    const category =
+        document.getElementById("categoryFilter").value;
+
+    const filtered = documents.filter(d => {
+
+        const text = [
+
+            d.id,
+            d.caseNumber,
+            d.title,
+            d.plaintiff,
+            d.defendant,
+            d.category,
+            d.documentType,
+            d.content,
+            ...(d.keywords || [])
+
+        ].join(" ").toLowerCase();
+
+        return (!search || text.includes(search)) &&
+               (!category || d.category === category);
+
+    });
+
+    const table = document.getElementById("documentsTable");
+
+    if (filtered.length === 0) {
+
+        table.innerHTML =
+            `<tr><td colspan="6" class="empty">No matching documents found.</td></tr>`;
+
+        return;
+
+    }
+
+    table.innerHTML = filtered.map(d => `
+
+        <tr>
+
+            <td class="case-id">${escapeHTML(d.id)}</td>
+
+            <td>${escapeHTML(d.caseNumber)}</td>
+
+            <td>${escapeHTML(d.title)}</td>
+
+            <td><span class="tag">${escapeHTML(d.category)}</span></td>
+
+            <td>${escapeHTML(d.registrationDate)}</td>
+
+            <td>
+
+                <button class="action-btn"
+                        onclick="viewDocument('${d.id}')">
+                    View
+                </button>
+
+                <button class="action-btn"
+                        onclick="deleteDocument('${d.id}')"
+                        style="background:#fee2e2;color:#b91c1c;">
+                    Delete
+                </button>
+
+            </td>
+
+        </tr>
+
+    `).join("");
+
+}
+
+
+// ============================================
+// ADD DOCUMENT
+// ============================================
+
+document.getElementById("caseForm").addEventListener("submit", function(e) {
+
+    e.preventDefault();
+
+    const nextId = "D" + (
+
+        documents.reduce((max, d) => {
+
+            const number = parseInt(
+                String(d.id).replace("D", ""),
+                10
+            );
+
+            return Math.max(max, Number.isFinite(number) ? number : 0);
+
+        }, 0) + 1
+
+    );
+
+    const keywordText =
+        document.getElementById("keywords").value.trim();
+
+    const newDocument = {
+
+        id: nextId,
+
+        caseNumber:
+            document.getElementById("caseNumber").value.trim(),
+
+        title:
+            document.getElementById("caseTitle").value.trim(),
+
+        registrationDate:
+            document.getElementById("regDate").value,
+
+        registrationTime:
+            document.getElementById("regTime").value,
+
+        category:
+            document.getElementById("category").value,
+
+        year:
+            Number(document.getElementById("caseYear").value),
+
+        plaintiff:
+            document.getElementById("plaintiff").value.trim(),
+
+        defendant:
+            document.getElementById("defendant").value.trim(),
+
+        documentType:
+            document.getElementById("docType").value,
+
+        keywords:
+            keywordText.split(",")
+                       .map(k => k.trim())
+                       .filter(Boolean),
+
+        content:
+            document.getElementById("content").value.trim()
+
+    };
+
+    documents.push(newDocument);
+
+    saveDocuments();
+
+    this.reset();
+
+    showToast("Document saved successfully!");
+
+    showPage("documents");
+
+    updateDashboard();
+
+});
+
+
+// ============================================
+// VIEW DOCUMENT
+// ============================================
+
+function viewDocument(id) {
+
+    const d = documents.find(doc => doc.id === id);
+
+    if (!d) return;
+
+    document.getElementById("detailsContent").innerHTML = `
+
+        <div class="card">
+
+            <h3>${escapeHTML(d.title)}</h3>
+
+            <div class="detail-grid">
+
+                <div class="detail-item">
+                    <small>Document ID</small>
+                    <strong>${escapeHTML(d.id)}</strong>
+                </div>
+
+                <div class="detail-item">
+                    <small>Case Number</small>
+                    <strong>${escapeHTML(d.caseNumber)}</strong>
+                </div>
+
+                <div class="detail-item">
+                    <small>Registration Date</small>
+                    <strong>${escapeHTML(d.registrationDate)}</strong>
+                </div>
+
+                <div class="detail-item">
+                    <small>Registration Time</small>
+                    <strong>${escapeHTML(d.registrationTime || "Not specified")}</strong>
+                </div>
+
+                <div class="detail-item">
+                    <small>Category</small>
+                    <strong>${escapeHTML(d.category)}</strong>
+                </div>
+
+                <div class="detail-item">
+                    <small>Year</small>
+                    <strong>${escapeHTML(String(d.year))}</strong>
+                </div>
+
+                <div class="detail-item">
+                    <small>Plaintiff / Complainant</small>
+                    <strong>${escapeHTML(d.plaintiff)}</strong>
+                </div>
+
+                <div class="detail-item">
+                    <small>Defendant / Respondent</small>
+                    <strong>${escapeHTML(d.defendant)}</strong>
+                </div>
+
+                <div class="detail-item">
+                    <small>Document Type</small>
+                    <strong>${escapeHTML(d.documentType)}</strong>
+                </div>
+
+                <div class="detail-item">
+                    <small>Keywords</small>
+                    <strong>${escapeHTML((d.keywords || []).join(", "))}</strong>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="card">
+
+            <h3>Document Content</h3>
+
+            <div class="document-content">
+                ${escapeHTML(d.content)}
+            </div>
+
+        </div>
+
+    `;
+
+    showPage("details");
+
+}
+
+
+// ============================================
+// DELETE DOCUMENT
+// ============================================
+
+function deleteDocument(id) {
+
+    const d = documents.find(doc => doc.id === id);
+
+    if (!d) return;
+
+    const confirmed = confirm(
+        "Delete document " + d.id + "?\n\n" + d.title
+    );
+
+    if (!confirmed) return;
+
+    documents = documents.filter(doc => doc.id !== id);
+
+    saveDocuments();
+
+    renderDocuments();
+
+    updateDashboard();
+
+    showToast("Document deleted.");
+
+}
+
+
+// ============================================
+// SEARCH ENGINE
+// ============================================
+
+function performSearch() {
+
+    const query =
+        document.getElementById("advancedSearch").value
+        .toLowerCase()
+        .trim();
+
+    const type =
+        document.getElementById("searchType").value;
+
+    if (!query) {
+
+        document.getElementById("searchResults").innerHTML =
+            `<tr><td colspan="6" class="empty">Enter a search query.</td></tr>`;
+
+        document.getElementById("searchInfo").textContent = "";
+
+        return;
+
+    }
+
+    let results = [];
+
+    if (type === "normal") {
+
+        results = exactSearch(query);
+
+    } else if (type === "fuzzy") {
+
+        results = fuzzySearch(query);
+
+    } else if (type === "multi") {
+
+        results = multiKeywordSearch(query);
+
+    }
+
+    currentSearchResults = results;
+
+    const table = document.getElementById("searchResults");
+
+    document.getElementById("searchInfo").textContent =
+        results.length + " result(s) found.";
+
+    if (results.length === 0) {
+
+        table.innerHTML =
+            `<tr><td colspan="6" class="empty">No matching documents found.</td></tr>`;
+
+        return;
+
+    }
+
+    table.innerHTML = results.map(item => {
+
+        const d = item.document;
+
+        return `
+
+            <tr>
+
+                <td class="case-id">${escapeHTML(d.id)}</td>
+
+                <td>${escapeHTML(d.caseNumber)}</td>
+
+                <td>${escapeHTML(d.title)}</td>
+
+                <td><span class="tag">${escapeHTML(d.category)}</span></td>
+
+                <td>${escapeHTML(String(item.score))}</td>
+
+                <td>
+                    <button class="action-btn"
+                            onclick="viewDocument('${d.id}')">
+                        View
+                    </button>
+                </td>
+
+            </tr>
+
+        `;
+
+    }).join("");
+
+}
+
+
+// ============================================
+// EXACT SEARCH
+// ============================================
+
+function exactSearch(query) {
+
+    return documents.filter(d => {
+
+        const text = getSearchText(d);
+
+        return text.includes(query);
+
+    }).map(d => ({
+
+        document: d,
+        score: "Match"
+
+    }));
+
+}
+
+
+// ============================================
+// MULTI-KEYWORD SEARCH
+// ============================================
+
+function multiKeywordSearch(query) {
+
+    const keywords = query
+        .split(/[,\s]+/)
+        .map(k => k.trim())
+        .filter(Boolean);
+
+    return documents.map(d => {
+
+        const text = getSearchText(d);
+
+        let matches = 0;
+
+        keywords.forEach(keyword => {
+
+            if (text.includes(keyword)) {
+                matches++;
+            }
+
+        });
+
+        return {
+
+            document: d,
+            score: matches + "/" + keywords.length,
+            matches: matches
+
+        };
+
+    }).filter(item => item.matches > 0)
+      .sort((a, b) => b.matches - a.matches);
+
+}
+
+
+// ============================================
+// FUZZY SEARCH
+// ============================================
+
+function fuzzySearch(query) {
+
+    return documents.map(d => {
+
+        const text = getSearchText(d);
+
+        const words = text.split(/\s+/);
+
+        let bestScore = 0;
+
+        words.forEach(word => {
+
+            if (!word) return;
+
+            const distance = levenshtein(query, word);
+
+            const maxLength = Math.max(query.length, word.length);
+
+            const similarity = maxLength === 0
+                ? 1
+                : 1 - distance / maxLength;
+
+            if (similarity > bestScore) {
+                bestScore = similarity;
+            }
+
+        });
+
+        return {
+
+            document: d,
+            score: Math.round(bestScore * 100) + "%",
+            similarity: bestScore
+
+        };
+
+    }).filter(item => item.similarity >= 0.60)
+      .sort((a, b) => b.similarity - a.similarity);
+
+}
+
+
+// ============================================
+// LEVENSHTEIN DISTANCE
+// ============================================
+
+function levenshtein(a, b) {
+
+    const matrix = [];
+
+    for (let i = 0; i <= b.length; i++) {
+
+        matrix[i] = [i];
+
+    }
+
+    for (let j = 0; j <= a.length; j++) {
+
+        matrix[0][j] = j;
+
+    }
+
+    for (let i = 1; i <= b.length; i++) {
+
+        for (let j = 1; j <= a.length; j++) {
+
+            if (b.charAt(i - 1) === a.charAt(j - 1)) {
+
+                matrix[i][j] = matrix[i - 1][j - 1];
+
+            } else {
+
+                matrix[i][j] = Math.min(
+
+                    matrix[i - 1][j - 1] + 1,
+                    matrix[i][j - 1] + 1,
+                    matrix[i - 1][j] + 1
+
+                );
+
+            }
+
+        }
+
+    }
+
+    return matrix[b.length][a.length];
+
+}
+
+
+// ============================================
+// SEARCH TEXT
+// ============================================
+
+function getSearchText(d) {
+
+    return [
+
+        d.id,
+        d.caseNumber,
+        d.title,
+        d.plaintiff,
+        d.defendant,
+        d.category,
+        d.documentType,
+        d.content,
+        ...(d.keywords || [])
+
+    ].join(" ").toLowerCase();
+
+}
+
+
+// ============================================
+// SECURITY HELPER
+// ============================================
+
+function escapeHTML(value) {
+
+    return String(value ?? "")
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
+
+}
+
+
+// ============================================
+// TOAST MESSAGE
+// ============================================
+
+function showToast(message) {
+
+    const toast = document.getElementById("toast");
+
+    toast.textContent = message;
+
+    toast.style.display = "block";
+
+    setTimeout(() => {
+
+        toast.style.display = "none";
+
+    }, 2500);
+
+}
+
+
+// ============================================
+// INITIALIZE APPLICATION
+// ============================================
+
+updateDashboard();
+
+renderDocuments();
+
+</script>
+
+</body>
+</html>
