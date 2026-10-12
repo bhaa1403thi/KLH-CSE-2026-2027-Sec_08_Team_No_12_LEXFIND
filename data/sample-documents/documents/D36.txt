@@ -1,0 +1,24 @@
+Document ID: D36
+Case Number: CASE-2026-036
+Title: Employment Dispute Case
+Registration Date: 09-12-2026
+Registration Time: 13:00 AM
+Category: Labour
+Year: 2026
+Victim Name: Rajesh Kumar
+Victim Age: 41
+Victim Phone: 9876541036
+Opponent Name: Suresh Sharma
+Opponent Phone: 9123451036
+Witness Name: Amit Verma
+Lawyer Name: Priya Singh
+Judge Name: Justice Anil Mehta
+Court Name: District Court
+Location: Hyderabad
+Case Status: Under Review
+
+Case Details:
+This case concerns a employment dispute involving Rajesh Kumar and Suresh Sharma.
+The court examined the documents, records, statements, and evidence
+submitted by both parties. The case is stored for legal document search,
+retrieval, and future text analytics.
